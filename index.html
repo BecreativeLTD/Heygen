@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heygen Clone - AI Video Generation Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🎬 Heygen</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#create" class="nav-link">Create Video</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <button class="btn-primary">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Create Studio-Quality Videos with AI Avatars</h1>
+                <p class="hero-subtitle">Turn text into professional videos in minutes. Choose from 100+ AI avatars and 40+ languages.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" onclick="scrollToSection('create')">Start Creating</button>
+                    <button class="btn-secondary btn-large">Watch Demo</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="video-preview">
+                    <div class="preview-placeholder">
+                        <span class="play-icon">▶</span>
+                        <p>Watch Demo Video</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <h3>100+ AI Avatars</h3>
+                    <p>Choose from a diverse range of realistic AI avatars to represent your brand</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>40+ Languages</h3>
+                    <p>Create videos in multiple languages with natural-sounding voices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Text to Video</h3>
+                    <p>Simply type your script and watch it come to life in minutes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Custom Branding</h3>
+                    <p>Add your logo, colors, and brand elements to every video</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Fast Generation</h3>
+                    <p>Generate professional videos in just a few minutes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics</h3>
+                    <p>Track video performance and engagement metrics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Video Section -->
+    <section id="create" class="create-section">
+        <div class="container">
+            <h2 class="section-title">Create Your Video</h2>
+            <div class="create-container">
+                <!-- Avatar Selection -->
+                <div class="create-step">
+                    <h3 class="step-title">1. Choose Your Avatar</h3>
+                    <div class="avatar-grid">
+                        <div class="avatar-card active" data-avatar="sophia">
+                            <div class="avatar-image avatar-female-1"></div>
+                            <p class="avatar-name">Sophia</p>
+                        </div>
+                        <div class="avatar-card" data-avatar="james">
+                            <div class="avatar-image avatar-male-1"></div>
+                            <p class="avatar-name">James</p>
+                        </div>
+                        <div class="avatar-card" data-avatar="maya">
+                            <div class="avatar-image avatar-female-2"></div>
+                            <p class="avatar-name">Maya</p>
+                        </div>
+                        <div class="avatar-card" data-avatar="david">
+                            <div class="avatar-image avatar-male-2"></div>
+                            <p class="avatar-name">David</p>
+                        </div>
+                        <div class="avatar-card" data-avatar="lisa">
+                            <div class="avatar-image avatar-female-3"></div>
+                            <p class="avatar-name">Lisa</p>
+                        </div>
+                        <div class="avatar-card" data-avatar="alex">
+                            <div class="avatar-image avatar-male-3"></div>
+                            <p class="avatar-name">Alex</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Script Input -->
+                <div class="create-step">
+                    <h3 class="step-title">2. Write Your Script</h3>
+                    <textarea id="scriptInput" class="script-input" placeholder="Enter your video script here...
+
+Example: 
+Hello! Welcome to our platform. Today, I'll show you how easy it is to create professional videos with AI avatars. 
+
+In just a few simple steps, you can have a studio-quality video ready to share with your audience."></textarea>
+                    <div class="script-info">
+                        <span id="charCount">0</span> / 500 characters
+                    </div>
+                </div>
+
+                <!-- Language Selection -->
+                <div class="create-step">
+                    <h3 class="step-title">3. Select Language & Voice</h3>
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <label for="language">Language</label>
+                            <select id="language" class="select-input">
+                                <option value="en">English</option>
+                                <option value="es">Spanish</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="zh">Chinese</option>
+                                <option value="ja">Japanese</option>
+                                <option value="ko">Korean</option>
+                                <option value="pt">Portuguese</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="voice">Voice Style</label>
+                            <select id="voice" class="select-input">
+                                <option value="neutral">Neutral</option>
+                                <option value="friendly">Friendly</option>
+                                <option value="professional">Professional</option>
+                                <option value="casual">Casual</option>
+                                <option value="energetic">Energetic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Background Selection -->
+                <div class="create-step">
+                    <h3 class="step-title">4. Choose Background</h3>
+                    <div class="background-grid">
+                        <div class="background-card active" data-bg="office">
+                            <div class="background-preview bg-office"></div>
+                            <p>Modern Office</p>
+                        </div>
+                        <div class="background-card" data-bg="studio">
+                            <div class="background-preview bg-studio"></div>
+                            <p>Studio</p>
+                        </div>
+                        <div class="background-card" data-bg="nature">
+                            <div class="background-preview bg-nature"></div>
+                            <p>Nature</p>
+                        </div>
+                        <div class="background-card" data-bg="gradient">
+                            <div class="background-preview bg-gradient"></div>
+                            <p>Gradient</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generate Button -->
+                <div class="generate-section">
+                    <button id="generateBtn" class="btn-primary btn-large btn-generate">
+                        <span class="btn-text">Generate Video</span>
+                        <span class="btn-icon">🎬</span>
+                    </button>
+                </div>
+
+                <!-- Preview Section -->
+                <div id="previewSection" class="preview-section" style="display: none;">
+                    <h3 class="step-title">Preview</h3>
+                    <div class="video-preview-container">
+                        <div class="video-player">
+                            <div class="player-content">
+                                <div class="avatar-preview" id="avatarPreview"></div>
+                                <div class="generating-overlay" id="generatingOverlay">
+                                    <div class="spinner"></div>
+                                    <p>Generating your video...</p>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" id="progressFill"></div>
+                                    </div>
+                                    <p class="progress-text" id="progressText">0%</p>
+                                </div>
+                            </div>
+                            <div class="player-controls" id="playerControls" style="display: none;">
+                                <button class="control-btn">▶</button>
+                                <div class="time-display">0:00 / 0:45</div>
+                                <button class="control-btn">⬇ Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="plan-name">Free</h3>
+                    <div class="plan-price">
+                        <span class="price">$0</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 1 video credit/month</li>
+                        <li>✓ 5 AI avatars</li>
+                        <li>✓ 720p resolution</li>
+                        <li>✓ Basic voices</li>
+                        <li>✗ Custom branding</li>
+                    </ul>
+                    <button class="btn-secondary">Get Started</button>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <h3 class="plan-name">Pro</h3>
+                    <div class="plan-price">
+                        <span class="price">$39</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ 20 video credits/month</li>
+                        <li>✓ 50+ AI avatars</li>
+                        <li>✓ 1080p resolution</li>
+                        <li>✓ Premium voices</li>
+                        <li>✓ Custom branding</li>
+                    </ul>
+                    <button class="btn-primary">Get Started</button>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="plan-name">Enterprise</h3>
+                    <div class="plan-price">
+                        <span class="price">$199</span>
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="plan-features">
+                        <li>✓ Unlimited videos</li>
+                        <li>✓ 100+ AI avatars</li>
+                        <li>✓ 4K resolution</li>
+                        <li>✓ All voices</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                    <button class="btn-secondary">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎬 Heygen</h3>
+                    <p>Create professional videos with AI avatars</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Heygen Clone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
